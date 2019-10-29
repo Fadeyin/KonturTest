@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_grav"
+    app:startDestination="@id/scheduleFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fadeyin.konturtest.fragments.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" >
+        <action
+            android:id="@+id/action_back"
+            app:destination="@id/scheduleFragment" />
+        <argument
+            android:name = "profile"
+            app:argType ="com.example.fadeyin.konturtest.models.User"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.example.fadeyin.konturtest.fragments.ScheduleFragment"
+        android:label="schedule_fragment"
+        tools:layout="@layout/schedule_fragment" >
+        <action
+            android:id="@+id/action_to_profile"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>
