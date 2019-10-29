@@ -76,7 +76,6 @@ class ScheduleFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ScheduleViewModel::class.java)
-        timer.start()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -114,6 +113,7 @@ class ScheduleFragment : Fragment() {
     @SuppressLint("CheckResult")
     private fun getUsers(){
         currentUsers = null
+        timer.start()
         val apiService = InterfaceAPI.createService()
         apiService.getUser1()
             .subscribeOn(Schedulers.io())
