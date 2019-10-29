@@ -9,12 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.findNavController
-
 
 import com.example.fadeyin.konturtest.R
 import java.text.SimpleDateFormat
 import java.util.*
+
+
+
 
 
 
@@ -31,8 +32,9 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.profile_fragment, container, false)
         v.findViewById<ImageView>(R.id.back_btn)?.setOnClickListener {
-            it.findNavController().navigate(R.id.scheduleFragment)
-        }
+            getActivity()?.onBackPressed()
+           // activity?.supportFragmentManager?.popBackStack()
+            }
         val safeArgs = arguments?.let { ProfileFragmentArgs.fromBundle(it) }
         val flowStepNumber = safeArgs?.profile
         val name = v.findViewById<TextView>(R.id.name)

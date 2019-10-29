@@ -65,40 +65,6 @@ open class ScheduleAdapter(private val clickListener: (User) -> Unit) : androidx
             }
         }
         notifyDataSetChanged()
-    }/*
-
-    fun getFilter(): Filter {
-        return object : Filter() {
-             override fun performFiltering(charSequence: CharSequence): FilterResults {
-                val charString = charSequence.toString()
-                if (charString.isEmpty()) {
-                    contactListFiltered = contactList
-                } else {
-                    val filteredList = ArrayList()
-                    for (row in contactList) {
-
-                        if (row.getName().toLowerCase().contains(charString.toLowerCase()) || row.getPhone().contains(
-                                charSequence
-                            )
-                        ) {
-                            filteredList.add(row)
-                        }
-                    }
-
-                    contactListFiltered = filteredList
-                }
-
-                val filterResults = FilterResults()
-                filterResults.values = contactListFiltered
-                return filterResults
-            }
-
-            protected fun publishResults(charSequence: CharSequence, filterResults: FilterResults) {
-                contactListFiltered = filterResults.values as ArrayList<Contact>
-                notifyDataSetChanged()
-            }
-        }
-    }*/
-
+    }
 }
 
